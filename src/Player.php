@@ -2,13 +2,13 @@
 class Player
 {
     private $name;
-    private $avg_2015;
+    private $avg_fifteen;
     private $id;
 
-    function __construct($name, $avg_2015, $id=null)
+    function __construct($name, $avg_fifteen, $id=null)
     {
         $this->name = $name;
-        $this->avg_2015 = $avg_2015;
+        $this->avg_fifteen = $avg_fifteen;
         $this->id = $id;
     }
 
@@ -19,7 +19,7 @@ class Player
 
     function getAvg2015()
     {
-        return $this->avg_2015;
+        return $this->avg_fifteen;
     }
 
     function getId()
@@ -28,7 +28,7 @@ class Player
     }
 
     function save() {
-      $GLOBALS['DB']->exec("INSERT INTO players (name, avg_2015) VALUES ('{$this->getName()}, {$this->getAvg2015()}');");
+      $GLOBALS['DB']->exec("INSERT INTO players (name, avg_fifteen) VALUES ('{$this->getName()}', {$this->getAvg2015()});");
       $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
@@ -38,9 +38,10 @@ class Player
             $players = array();
             foreach ($returned_players as $player) {
                 $name = $player['name'];
-                $avg_2015 = $player['avg_2015'];
+                $avg_fifteen = $player['avg_fifteen'];
+                var_dump($avg_fifteen);
                 $id = $player['id'];
-                $new_player = new Player($name, $id);
+                $new_player = new Player($name, $avg_fifteen, $id);
                 array_push($players, $new_player);
             }
             return $players;

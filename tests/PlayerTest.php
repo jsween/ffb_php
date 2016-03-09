@@ -16,34 +16,34 @@
     {
         protected function tearDown()
         {
-            // Player::deleteAll();
+            Player::deleteAll();
         }
 
         function test_getName()
         {
             // Arrange
             $name = 'Joe Montana';
-            $avg_2015 = 24.1;
+            $avg_fifteen = 24.1;
             $id = 16;
-            $test_brand = new Player($name, $avg_2015, $id);
+            $test_player = new Player($name, $avg_fifteen, $id);
 
             // Act
-            $result = $test_brand->getName();
+            $result = $test_player->getName();
 
             // Assert
             $this->assertEquals('Joe Montana', $result);
         }
 
-        function test_getAvg2015()
+        function test_getAvgFifteen()
         {
             // Arrange
             $name = 'Joe Montana';
-            $avg_2015 = 24.1;
+            $avg_fifteen = 24.1;
             $id = 16;
-            $test_brand = new Player($name, $avg_2015, $id);
+            $test_player = new Player($name, $avg_fifteen, $id);
 
             // Act
-            $result = $test_brand->getName();
+            $result = $test_player->getName();
 
             // Assert
             $this->assertEquals('Joe Montana', $result);
@@ -53,16 +53,75 @@
         {
             // Arrange
             $name = 'Joe Montana';
-            $avg_2015 = 24.1;
+            $avg_fifteen = 24.1;
             $id = 16;
-            $test_brand = new Player($name, $avg_2015, $id);
+            $test_player = new Player($name, $avg_fifteen, $id);
 
             // Act
-            $result = $test_brand->getId();
+            $result = $test_player->getId();
 
             // Assert
             $this->assertEquals(16, $result);
         }
+
+        function test_save()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $id);
+
+            // Act
+            $test_player->save();
+
+            // Assert
+            $result = Player::getAll();
+            $this->assertEquals($test_player, $result[0]);
+        }
+
+        // function test_getAll()
+        // {
+        //     // Arrange
+        //     $name = 'Joe Montana';
+        //     $avg_fifteen = 24.1;
+        //     $id = 16;
+        //     $test_player = new Player($name, $avg_fifteen, $id);
+        //     $test_player->save();
+        //
+        //     $name2 = 'Adidadas';
+        //     $test_player2 = new Player($name2);
+        //     $test_player2->save();
+        //
+        //     // Act
+        //     $result = Player::getAll();
+        //
+        //     // Assert
+        //     $this->assertEquals([$test_player, $test_player2], $result);
+        //
+        // }
+        //
+        // function test_deleteAll()
+        // {
+        //     // Arrange
+        //     $name = 'Joe Montana';
+        //     $avg_fifteen = 24.1;
+        //     $id = 16;
+        //     $test_player = new Player($name, $avg_fifteen, $id);
+        //     $test_player->save();
+        //
+        //     $name2 = 'Air Jordans';
+        //     $test_player2 = new Player($name2);
+        //     $test_player2->save();
+        //
+        //     // Act
+        //     Player::deleteAll();
+        //     $result = Player::getAll();
+        //
+        //     // Assert
+        //     $this->assertEquals([], $result);
+        //
+        // }
 
     }
  ?>
