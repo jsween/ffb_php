@@ -28,16 +28,17 @@ class Player
     }
 
     function save() {
-      $GLOBALS['DB']->exec("INSERT INTO players (name, avg_2015) VALUES ('{$this->getName()}');");
+      $GLOBALS['DB']->exec("INSERT INTO players (name, avg_2015) VALUES ('{$this->getName()}, {$this->getAvg2015()}');");
       $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
     static function getAll()
         {
-            $returned_players = $GLOBALS['DB']->query("SELECT * FROM players ORDER BY name ASC;");
+            $returned_players = $GLOBALS['DB']->query("SELECT * FROM players;");
             $players = array();
             foreach ($returned_players as $player) {
                 $name = $player['name'];
+                $avg_2015 = $player['avg_2015'];
                 $id = $player['id'];
                 $new_player = new Player($name, $id);
                 array_push($players, $new_player);
