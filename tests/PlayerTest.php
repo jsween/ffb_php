@@ -24,8 +24,9 @@
             // Arrange
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
+            $consistency = 98;
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
 
             // Act
             $result = $test_player->getName();
@@ -39,8 +40,9 @@
             // Arrange
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
+            $consistency = 98;
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
 
             // Act
             $result = $test_player->getName();
@@ -49,13 +51,30 @@
             $this->assertEquals('Joe Montana', $result);
         }
 
+        function test_getConsistency()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
+
+            // Act
+            $result = $test_player->getConsistency();
+
+            // Assert
+            $this->assertEquals(98, $result);
+        }
+
         function test_getId()
         {
             // Arrange
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
+            $consistency = 98;
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
 
             // Act
             $result = $test_player->getId();
@@ -69,8 +88,9 @@
             // Arrange
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
+            $consistency = 98;
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
 
             // Act
             $test_player->save();
@@ -85,12 +105,14 @@
             // Arrange
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
-            $test_player = new Player($name, $avg_fifteen);
+            $consistency = 98;
+            $test_player = new Player($name, $avg_fifteen, $consistency);
             $test_player->save();
 
             $name2 = 'Brett Favre';
-            $avg_fifteen = 23.2;
-            $test_player2 = new Player($name2, $avg_fifteen);
+            $avg_fifteen2 = 23.2;
+            $consistency2 = 98;
+            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
             $test_player2->save();
 
             // Act
@@ -106,12 +128,14 @@
             // Arrange
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
-            $test_player = new Player($name, $avg_fifteen);
+            $consistency = 98;
+            $test_player = new Player($name, $avg_fifteen, $consistency);
             $test_player->save();
 
             $name2 = 'Brett Favre';
-            $avg_fifteen = 23.2;
-            $test_player2 = new Player($name2, $avg_fifteen);
+            $avg_fifteen2 = 23.2;
+            $consistency2 = 98;
+            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
             $test_player2->save();
 
             // Act
