@@ -16,7 +16,7 @@ class Player
         $this->consistency = $consistency;
         $this->position_id = $position_id;
         $this->team_id = $team_id;
-        $this->photo_url;
+        $this->photo_url = $photo_url;
         $this->id = $id;
     }
 

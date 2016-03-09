@@ -25,8 +25,11 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
 
             // Act
             $result = $test_player->getName();
@@ -41,8 +44,11 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
 
             // Act
             $result = $test_player->getName();
@@ -57,8 +63,11 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
 
             // Act
             $result = $test_player->getConsistency();
@@ -73,8 +82,11 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
 
             // Act
             $result = $test_player->getId();
@@ -89,8 +101,11 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
             $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $consistency, $id);
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
 
             // Act
             $test_player->save();
@@ -106,13 +121,20 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
-            $test_player = new Player($name, $avg_fifteen, $consistency);
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
             $test_player->save();
 
             $name2 = 'Brett Favre';
             $avg_fifteen2 = 23.2;
-            $consistency2 = 98;
-            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
+            $consistency2 = 93;
+            $position_id2 = 1;
+            $team_id2 = 12;
+            $photo_url2 = 'http://www.officialbrettfavre.com/i/n/131.jpg';
+            $test_player2 = new Player($name2, $avg_fifteen, $consistency2, $position_id2, $team_id2, $photo_url2);
             $test_player2->save();
 
             // Act
@@ -129,13 +151,19 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
-            $test_player = new Player($name, $avg_fifteen, $consistency);
-            $test_player->save();
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
 
             $name2 = 'Brett Favre';
             $avg_fifteen2 = 23.2;
-            $consistency2 = 98;
-            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
+            $consistency2 = 93;
+            $position_id2 = 1;
+            $team_id2 = 12;
+            $photo_url2 = 'http://www.officialbrettfavre.com/i/n/131.jpg';
+            $test_player2 = new Player($name2, $avg_fifteen, $consistency2, $position_id2, $team_id2, $photo_url2);
             $test_player2->save();
 
             // Act
@@ -153,45 +181,57 @@
             $name = 'Joe Montana';
             $avg_fifteen = 24.1;
             $consistency = 98;
-            $test_player = new Player($name, $avg_fifteen, $consistency);
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'http://www.joemontana.com/1.jpg';
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
             $test_player->save();
 
             $name2 = 'Brett Favre';
             $avg_fifteen2 = 23.2;
-            $consistency2 = 98;
-            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
+            $consistency2 = 93;
+            $position_id2 = 1;
+            $team_id2 = 12;
+            $photo_url2 = 'http://www.officialbrettfavre.com/i/n/131.jpg';
+            $test_player2 = new Player($name2, $avg_fifteen, $consistency2, $position_id2, $team_id2, $photo_url2);
             $test_player2->save();
 
             // Act
             $id = $test_player->getId();
             $result = Player::find($id);
-
             // Assert
             $this->assertEquals($test_player, $result);
         }
 
-        function test_findByName()
-        {
-            // Arrange
-            $name = 'Joe Montana';
-            $avg_fifteen = 24.1;
-            $consistency = 98;
-            $test_player = new Player($name, $avg_fifteen, $consistency);
-            $test_player->save();
-
-            $name2 = 'Brett Favre';
-            $avg_fifteen2 = 23.2;
-            $consistency2 = 98;
-            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
-            $test_player2->save();
-
-            // Act
-            $name = $test_player->getName();
-            $result = Player::findByName($name);
-
-            // Assert
-            $this->assertEquals($name, $result->getName());
-        }
+        // function test_findByName()
+        // {
+        //     // Arrange
+        //     $name = 'Joe Montana';
+        //     $avg_fifteen = 24.1;
+        //     $consistency = 98;
+        //     $position_id = 1;
+        //     $team_id = 28;
+        //     $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
+        //     $id = 16;
+        //     $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
+        //
+        //     $name2 = 'Brett Favre';
+        //     $avg_fifteen2 = 23.2;
+        //     $consistency2 = 93;
+        //     $position_id2 = 1;
+        //     $team_id2 = 12;
+        //     $photo_url2 = 'http://www.officialbrettfavre.com/i/n/131.jpg';
+        //     $test_player2 = new Player($name2, $avg_fifteen, $consistency2, $position_id2, $team_id2, $photo_url2);
+        //     $test_player2->save();
+        //
+        //     // Act
+        //     $name = $test_player->getName();
+        //     $result = Player::findByName($name);
+        //
+        //     // Assert
+        //     $this->assertEquals($name, $result->getName());
+        // }
 
     }
  ?>
