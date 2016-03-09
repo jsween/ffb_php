@@ -26,6 +26,10 @@
             )
         );
     });
+    //all players
+    $app->get("/players", function() use ($app) {
+        return $app['twig']->render('players.html.twig', array('players' => Player::getAll()));
+    });
 
 
     return $app;
