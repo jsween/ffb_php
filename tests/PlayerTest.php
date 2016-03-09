@@ -80,48 +80,48 @@
             $this->assertEquals($test_player, $result[0]);
         }
 
-        // function test_getAll()
-        // {
-        //     // Arrange
-        //     $name = 'Joe Montana';
-        //     $avg_fifteen = 24.1;
-        //     $id = 16;
-        //     $test_player = new Player($name, $avg_fifteen, $id);
-        //     $test_player->save();
-        //
-        //     $name2 = 'Adidadas';
-        //     $test_player2 = new Player($name2);
-        //     $test_player2->save();
-        //
-        //     // Act
-        //     $result = Player::getAll();
-        //
-        //     // Assert
-        //     $this->assertEquals([$test_player, $test_player2], $result);
-        //
-        // }
-        //
-        // function test_deleteAll()
-        // {
-        //     // Arrange
-        //     $name = 'Joe Montana';
-        //     $avg_fifteen = 24.1;
-        //     $id = 16;
-        //     $test_player = new Player($name, $avg_fifteen, $id);
-        //     $test_player->save();
-        //
-        //     $name2 = 'Air Jordans';
-        //     $test_player2 = new Player($name2);
-        //     $test_player2->save();
-        //
-        //     // Act
-        //     Player::deleteAll();
-        //     $result = Player::getAll();
-        //
-        //     // Assert
-        //     $this->assertEquals([], $result);
-        //
-        // }
+        function test_getAll()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $test_player = new Player($name, $avg_fifteen);
+            $test_player->save();
+
+            $name2 = 'Brett Favre';
+            $avg_fifteen = 23.2;
+            $test_player2 = new Player($name2, $avg_fifteen);
+            $test_player2->save();
+
+            // Act
+            $result = Player::getAll();
+
+            // Assert
+            $this->assertEquals([$test_player, $test_player2], $result);
+
+        }
+
+        function test_deleteAll()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $test_player = new Player($name, $avg_fifteen);
+            $test_player->save();
+
+            $name2 = 'Brett Favre';
+            $avg_fifteen = 23.2;
+            $test_player2 = new Player($name2, $avg_fifteen);
+            $test_player2->save();
+
+            // Act
+            Player::deleteAll();
+            $result = Player::getAll();
+
+            // Assert
+            $this->assertEquals([], $result);
+
+        }
 
     }
  ?>

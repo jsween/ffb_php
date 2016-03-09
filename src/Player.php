@@ -39,7 +39,6 @@ class Player
             foreach ($returned_players as $player) {
                 $name = $player['name'];
                 $avg_fifteen = $player['avg_fifteen'];
-                var_dump($avg_fifteen);
                 $id = $player['id'];
                 $new_player = new Player($name, $avg_fifteen, $id);
                 array_push($players, $new_player);
