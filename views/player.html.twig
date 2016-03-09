@@ -11,7 +11,7 @@
         {% if players is not empty %}
             <h2 class="center">All Players</h2>
             {% for player in players | sort %}
-                <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} </a>
+                <a class="block" href="/players/{{ player.getId }}">{{ player.getName }}</a>
             {% endfor %}
         {% else %}
             <h2>No Players Available Yet</h2>
