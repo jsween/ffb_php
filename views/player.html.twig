@@ -8,14 +8,8 @@
         <h1 class="center">Fantasy Football Draft Tool</h1>
     </div>
     <div class="container">
-        {% if players is not empty %}
-            <h2 class="center">All Players</h2>
-            {% for player in players | sort %}
-                <a class="block" href="/players/{{ player.getId }}">{{ player.getName }}</a>
-            {% endfor %}
-        {% else %}
-            <h2>No Players Available Yet</h2>
-        {% endif %}
+            <h2 class="center">{{ player.getName }}</h2>
+
     </div>
     <footer>
         {% include '/includes/footer.html.twig' %}

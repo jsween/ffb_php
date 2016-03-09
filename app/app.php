@@ -23,12 +23,21 @@
     $app->get("/", function() use ($app) {
         return $app['twig']->render('index.html.twig', array(
             'navbar' => true
-            )
-        );
+            ));
     });
     //all players
     $app->get("/players", function() use ($app) {
-        return $app['twig']->render('players.html.twig', array('players' => Player::getAll()));
+        return $app['twig']->render('players.html.twig', array(
+            'players' => Player::getAll()
+        ));
+    });
+    //selected player
+    $app->get("/players/{id}", function($id) use ($app) {
+        $player = Player::find($id);
+        return $app['twig']->render(
+        'player.html.twig', array(
+            'player' => $player
+        ));
     });
 
 
