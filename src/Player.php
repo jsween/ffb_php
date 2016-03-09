@@ -57,7 +57,29 @@ class Player
         static function deleteAll()
         {
             $GLOBALS['DB']->query("DELETE FROM players;");
-            // $GLOBALS['DB']->query("DELETE FROM players_stores;");
+        }
+
+        static function find($search_id)
+        {
+            $found_player = NULL;
+            $players = Player::getAll();
+            foreach ($players as $player) {
+                if ($player->getId() == $search_id) {
+                    $found_player = $player;
+                }
+            }
+            return $found_player;
+        }
+
+        static function findByName($search_name)
+        {
+            $players = Player::getAll();
+            foreach ($players as $player) {
+                if ($player->getName() == $search_name) {
+                    return $player;
+                }
+            }
+            return false;
         }
 
 }

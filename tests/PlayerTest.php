@@ -147,5 +147,28 @@
 
         }
 
+        function test_find()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $test_player = new Player($name, $avg_fifteen, $consistency);
+            $test_player->save();
+
+            $name2 = 'Brett Favre';
+            $avg_fifteen2 = 23.2;
+            $consistency2 = 98;
+            $test_player2 = new Player($name2, $avg_fifteen, $consistency2);
+            $test_player2->save();
+
+            // Act
+            $id = $test_player->getId();
+            $result = Player::find($id);
+
+            // Assert
+            $this->assertEquals($test_player, $result);
+        }
+
     }
  ?>
