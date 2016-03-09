@@ -1,0 +1,24 @@
+<html>
+<head>
+    {% include '/includes/head.html.twig' %}
+</head>
+<body>
+    {% include '/includes/navbar.html.twig' %}
+    <div class="jumbotron">
+        <h1 class="center">Fantasy Football Draft Tool</h1>
+    </div>
+    <div class="container">
+        {% if players is not empty %}
+            <h2 class="center">All Players</h2>
+            {% for player in players | sort %}
+                <a class="block" href="/players/{{ player.getId }}">{{ player.getName }}</a>
+            {% endfor %}
+            {% else %}
+            <h2>No Players Available Yet</h2>
+            {% endif %}
+            </div>
+    <footer>
+        {% include '/includes/footer.html.twig' %}
+    </footer>
+</body>
+</html>
