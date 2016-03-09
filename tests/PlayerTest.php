@@ -23,8 +23,24 @@
         {
             // Arrange
             $name = 'Joe Montana';
+            $avg_2015 = 24.1;
             $id = 16;
-            $test_brand = new Player($name, $id);
+            $test_brand = new Player($name, $avg_2015, $id);
+
+            // Act
+            $result = $test_brand->getName();
+
+            // Assert
+            $this->assertEquals('Joe Montana', $result);
+        }
+
+        function test_getAvg2015()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_2015 = 24.1;
+            $id = 16;
+            $test_brand = new Player($name, $avg_2015, $id);
 
             // Act
             $result = $test_brand->getName();
@@ -37,8 +53,9 @@
         {
             // Arrange
             $name = 'Joe Montana';
+            $avg_2015 = 24.1;
             $id = 16;
-            $test_brand = new Player($name, $id);
+            $test_brand = new Player($name, $avg_2015, $id);
 
             // Act
             $result = $test_brand->getId();
