@@ -20,5 +20,9 @@
       return $this->id;
     }
 
+    function save() {
+
+    }
+
   }
  ?>
