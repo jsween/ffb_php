@@ -22,7 +22,7 @@
     //home page
     $app->get("/", function() use ($app) {
         return $app['twig']->render('index.html.twig', array(
-            'navbar' => true)
+            'navbar' => true
         ));
     });
 
