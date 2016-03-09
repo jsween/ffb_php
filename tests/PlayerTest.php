@@ -19,6 +19,20 @@
             // Player::deleteAll();
         }
 
+        function test_getName()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $id = 16;
+            $test_brand = new Player($name, $id);
+
+            // Act
+            $result = $test_brand->getName();
+
+            // Assert
+            $this->assertEquals('Joe Montana', $result);
+        }
+
         function test_getId()
         {
             // Arrange

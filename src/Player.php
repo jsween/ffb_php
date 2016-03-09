@@ -21,8 +21,11 @@
     }
 
     function save() {
-
+      $GLOBALS['DB']->exec("INSERT INTO players (name) VALUES ('{$this->getName()}');");
+      $this->id = $GLOBALS['DB']->lastInsertId();
     }
+
+
 
   }
  ?>
