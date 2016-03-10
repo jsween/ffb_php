@@ -2,11 +2,13 @@
 class Team
 {
     private $name;
+    private $logo;
     private $id;
 
-    function __construct($name, $id=null)
+    function __construct($name, $logo, $id=null)
     {
         $this->name = $name;
+        $this->logo = $logo;
         $this->id = $id;
     }
 
@@ -15,13 +17,18 @@ class Team
         return $this->name;
     }
 
+    function getLogo()
+    {
+        return $this->logo;
+    }
+
     function getId()
     {
       return $this->id;
     }
 
     function save() {
-      $GLOBALS['DB']->exec("INSERT INTO teams (team_name, id) VALUES ('{$this->getName()}', {$this->getId()});");
+      $GLOBALS['DB']->exec("INSERT INTO teams (team_name, logo, id) VALUES ('{$this->getName()}', '{$this->getLogo()}' {$this->getId()});");
     }
 
     static function getAll()
@@ -30,8 +37,9 @@ class Team
             $teams = array();
             foreach ($returned_teams as $team) {
                 $name = $team['team_name'];
+                $logo = $team['logo'];
                 $id = $team['id'];
-                $new_team = new Team($name, $id);
+                $new_team = new Team($name, $logo, $id);
                 array_push($teams, $new_team);
             }
             return $teams;
