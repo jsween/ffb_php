@@ -15,7 +15,7 @@
                     <h4>Quarterbacks</h4>
                     {% for player in players | sort %}
                         {% if player.getPositionId == 1 %}
-                            <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} </a>
+                            <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} - {{ player.getTeamAbbreviation }}</a>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -23,7 +23,7 @@
                     <h4>Running Backs</h4>
                     {% for player in players | sort %}
                         {% if player.getPositionId == 2 %}
-                            <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} </a>
+                            <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} - {{ player.getTeamAbbreviation }}</a>
                         {% endif %}
                     {% endfor %}
                 </div>

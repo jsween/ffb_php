@@ -126,11 +126,27 @@ class Player
             foreach($returned_teams as $team) {
                 $team_name = $team['team_name'];
                 $logo = $team['logo'];
+                $abbreviation = $team['abbreviation'];
                 $id = $team['id'];
-                $new_team = new Team($team_name, $logo, $id);
+                $new_team = new Team($team_name, $logo, $abbreviation, $id);
                 array_push($teams, $new_team);
             }
             return $teams[0]->getLogo();
+        }
+
+        function getTeamAbbreviation()
+        {
+            $teams = array();
+            $returned_teams = $GLOBALS['DB']->query("SELECT * FROM teams JOIN players ON (players.team_id = teams.id) WHERE team_id = {$this->getTeamId()}");
+            foreach($returned_teams as $team) {
+                $team_name = $team['team_name'];
+                $logo = $team['logo'];
+                $abbreviation = $team['abbreviation'];
+                $id = $team['id'];
+                $new_team = new Team($team_name, $logo, $abbreviation, $id);
+                array_push($teams, $new_team);
+            }
+            return $teams[0]->getAbbreviation();
         }
 
         function getPosition()

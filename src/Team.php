@@ -3,12 +3,14 @@ class Team
 {
     private $name;
     private $logo;
+    private $abbreviation;
     private $id;
 
-    function __construct($name, $logo, $id=null)
+    function __construct($name, $logo, $abbreviation, $id=null)
     {
         $this->name = $name;
         $this->logo = $logo;
+        $this->abbreviation = $abbreviation;
         $this->id = $id;
     }
 
@@ -20,6 +22,11 @@ class Team
     function getLogo()
     {
         return $this->logo;
+    }
+
+    function getAbbreviation()
+    {
+        return $this->abbreviation;
     }
 
     function getId()
