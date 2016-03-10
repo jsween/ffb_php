@@ -27,6 +27,22 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <div class="receivers col-xs-2">
+                    <h4>Wide Receivers</h4>
+                    {% for player in players | sort %}
+                        {% if player.getPositionId == 3 %}
+                            <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} - {{ player.getTeamAbbreviation }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="tightends col-xs-2">
+                    <h4>Tight Ends</h4>
+                    {% for player in players | sort %}
+                        {% if player.getPositionId == 4 %}
+                            <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} - {{ player.getTeamAbbreviation }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             {% else %}
                 <h2>No Players Available Yet</h2>
             {% endif %}
