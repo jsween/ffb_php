@@ -39,6 +39,12 @@
             'player' => $player
         ));
     });
+    //most consistent players
+    $app->get("/consistent", function() use ($app) {
+        return $app['twig']->render('consistent.html.twig', array(
+            'players' => Player::getAll()
+        ));
+    });
 
 
     return $app;

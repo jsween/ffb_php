@@ -8,13 +8,13 @@
         <h1 class="center">Fantasy Football Draft Tool</h1>
     </div>
     <div class="container">
-        <h2 class="center">All Players</h2>
+        <h2 class="center">Most Consistent Players</h2>
         <div class="row">
             {% if players is not empty %}
                 <div class="quarterbacks col-xs-2">
                     <h4>Quarterbacks</h4>
                     {% for player in players | sort %}
-                        {% if player.getPositionId == 1 %}
+                        {% if player.getPositionId == 1 and player.getConsistency > 82 %}
                             <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} - {{ player.getTeamAbbreviation }}</a>
                         {% endif %}
                     {% endfor %}
@@ -22,7 +22,7 @@
                 <div class="runningbacks col-xs-2">
                     <h4>Running Backs</h4>
                     {% for player in players | sort %}
-                        {% if player.getPositionId == 2 %}
+                        {% if player.getPositionId == 2 and player.getConsistency > 82 %}
                             <a class="block" href="/players/{{ player.getId }}">{{ player.getName }} - {{ player.getTeamAbbreviation }}</a>
                         {% endif %}
                     {% endfor %}
