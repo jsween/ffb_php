@@ -1,3 +1,6 @@
+* {
+    font-family: 'Lora', serif;
+}
 .player-photo {
     max-width: 350px;
     max-height: 254px;
@@ -8,6 +11,13 @@
     background-size: cover;
     color: #eee;
     text-shadow: 3px 3px 3px #111;
+    height: 500px;
+    padding-top: 280px;
+}
+
+.jumbotron h1 {
+    font-size: 5em;
+    font-weight: bold;
 }
 
 .center {
