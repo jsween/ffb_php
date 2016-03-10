@@ -106,5 +106,18 @@ class Player
             return false;
         }
 
+        function getTeam()
+        {
+            $teams = array();
+            $returned_teams = $GLOBALS['DB']->query("SELECT * FROM teams JOIN players ON (players.team_id = teams.id) WHERE team_id = {$this->getTeamId()}");
+            foreach($returned_teams as $team) {
+                $team_name = $team['team_name'];
+                $id = $team['id'];
+                $new_team = new Team($team_name, $id);
+                array_push($teams, $new_team);
+            }
+
+            return $teams[0]->getName();
+        }
 }
  ?>

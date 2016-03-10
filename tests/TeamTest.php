@@ -5,6 +5,8 @@
     * @backupStaticAttributes disabled
     */
 
+    require_once __DIR__ . '/../src/Player.php';
+    require_once __DIR__ . '/../src/Position.php';
     require_once __DIR__ . '/../src/Team.php';
 
     $server = 'mysql:host=localhost;dbname=ffb_tool_db_test';
@@ -23,7 +25,7 @@
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $id = 16;
+            $id = 28;
             $test_team = new Team($name, $id);
 
             // Act
@@ -37,21 +39,21 @@
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $id = 16;
+            $id = 28;
             $test_team = new Team($name, $id);
 
             // Act
             $result = $test_team->getId();
 
             // Assert
-            $this->assertEquals(16, $result);
+            $this->assertEquals(28, $result);
         }
 
         function test_save()
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $id = 16;
+            $id = 28;
             $test_team = new Team($name, $id);
 
             // Act
@@ -66,18 +68,20 @@
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $test_team = new Team($name);
+            $id = 28;
+            $test_team = new Team($name, $id);
             $test_team->save();
 
             $name2 = 'Green Bay Packers';
-            $test_team2 = new Team($name2);
+            $id = 2;
+            $test_team2 = new Team($name2, $id);
             $test_team2->save();
 
             // Act
             $result = Team::getAll();
 
             // Assert
-            $this->assertEquals([$test_team, $test_team2], $result);
+            $this->assertEquals([$test_team2, $test_team], $result);
 
         }
 
@@ -85,11 +89,13 @@
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $test_team = new Team($name);
+            $id = 28;
+            $test_team = new Team($name, $id);
             $test_team->save();
 
             $name2 = 'Green Bay Packers';
-            $test_team2 = new Team($name2);
+            $id = 2;
+            $test_team2 = new Team($name2, $id);
             $test_team2->save();
 
             // Act
@@ -105,11 +111,13 @@
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $test_team = new Team($name);
+            $id = 28;
+            $test_team = new Team($name, $id);
             $test_team->save();
 
             $name2 = 'Green Bay Packers';
-            $test_team2 = new Team($name2);
+            $id = 2;
+            $test_team2 = new Team($name2, $id);
             $test_team2->save();
 
             // Act
@@ -124,11 +132,13 @@
         {
             // Arrange
             $name = 'San Francisco 49ers';
-            $test_team = new Team($name);
+            $id = 28;
+            $test_team = new Team($name, $id);
             $test_team->save();
 
             $name2 = 'Green Bay Packers';
-            $test_team2 = new Team($name2);
+            $id = 28;
+            $test_team2 = new Team($name2, $id);
             $test_team2->save();
 
             // Act

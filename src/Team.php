@@ -21,8 +21,8 @@ class Team
     }
 
     function save() {
-      $GLOBALS['DB']->exec("INSERT INTO teams (name) VALUES ('{$this->getName()}');");
-      $this->id = $GLOBALS['DB']->lastInsertId();
+      $GLOBALS['DB']->exec("INSERT INTO teams (team_name, id) VALUES ('{$this->getName()}', {$this->getId()});");
+     // $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
     static function getAll()
@@ -30,7 +30,7 @@ class Team
             $returned_teams = $GLOBALS['DB']->query("SELECT * FROM teams;");
             $teams = array();
             foreach ($returned_teams as $team) {
-                $name = $team['name'];
+                $name = $team['team_name'];
                 $id = $team['id'];
                 $new_team = new Team($name, $id);
                 array_push($teams, $new_team);

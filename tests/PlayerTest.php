@@ -6,6 +6,8 @@
     */
 
     require_once __DIR__ . '/../src/Player.php';
+    require_once __DIR__ . '/../src/Position.php';
+    require_once __DIR__ . '/../src/Team.php';
 
     $server = 'mysql:host=localhost;dbname=ffb_tool_db_test';
     $username = 'root';
@@ -17,6 +19,7 @@
         protected function tearDown()
         {
             Player::deleteAll();
+            // Team::deleteAll();
         }
 
         function test_getName()
@@ -232,6 +235,36 @@
         //     // Assert
         //     $this->assertEquals($name, $result->getName());
         // }
+
+        function test_getTeam()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'http://www.joemontana.com/1.jpg';
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
+            $test_player->save();
+
+
+            $team_name1 = "San Francisco 49ers";
+            $team_id = 28;
+            $test_team1 = new Team($team_name1, $team_id);
+            $test_team1->save();
+            var_dump($test_team1->getName());
+
+            $team_name2 = "Cincinnati Bengals";
+            $team_id2 = 7;
+            $test_team2 = new Team($team_name2, $team_id2);
+            $test_team2->save();
+            // Act
+            $result = $test_player->getTeam();
+            // Assert
+            $this->assertEquals("San Francisco 49ers", $result);
+        }
 
     }
  ?>
