@@ -116,8 +116,21 @@ class Player
                 $new_team = new Team($team_name, $id);
                 array_push($teams, $new_team);
             }
-
             return $teams[0]->getName();
+        }
+
+        function getTeamLogo()
+        {
+            $teams = array();
+            $returned_teams = $GLOBALS['DB']->query("SELECT * FROM teams JOIN players ON (players.team_id = teams.id) WHERE team_id = {$this->getTeamId()}");
+            foreach($returned_teams as $team) {
+                $team_name = $team['team_name'];
+                $logo = $team['logo'];
+                $id = $team['id'];
+                $new_team = new Team($team_name, $logo, $id);
+                array_push($teams, $new_team);
+            }
+            return $teams[0]->getLogo();
         }
 
         function getPosition()
@@ -130,8 +143,9 @@ class Player
                 $new_position = new position($position_name, $id);
                 array_push($positions, $new_position);
             }
-
             return $positions[0]->getName();
         }
+
+
 }
  ?>

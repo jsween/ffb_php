@@ -1,6 +1,11 @@
 * {
     font-family: 'Lora', serif;
 }
+
+.logo {
+    max-width: 200px;
+}
+
 .player-photo {
     max-width: 350px;
     max-height: 254px;
