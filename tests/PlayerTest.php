@@ -254,7 +254,6 @@
             $team_id = 28;
             $test_team1 = new Team($team_name1, $team_id);
             $test_team1->save();
-            var_dump($test_team1->getName());
 
             $team_name2 = "Cincinnati Bengals";
             $team_id2 = 7;

@@ -22,7 +22,6 @@ class Team
 
     function save() {
       $GLOBALS['DB']->exec("INSERT INTO teams (team_name, id) VALUES ('{$this->getName()}', {$this->getId()});");
-     // $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
     static function getAll()
