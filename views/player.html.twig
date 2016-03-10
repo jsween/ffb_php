@@ -8,7 +8,9 @@
         <h1 class="center">Fantasy Football Draft Tool</h1>
     </div>
     <div class="container">
-            <h2 class="center">{{ player.getName }}</h2>
+            <img class="player-photo" src="/../img/{{ player.getPhotoUrl }}" alt="{{ player.getName }}" />
+            <h2>{{ player.getName }}</h2>
+            <p>{{ player.getTeam }}</p>
 
     </div>
     <footer>
