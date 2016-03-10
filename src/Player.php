@@ -119,5 +119,19 @@ class Player
 
             return $teams[0]->getName();
         }
+
+        function getPosition()
+        {
+            $positions = array();
+            $returned_positions = $GLOBALS['DB']->query("SELECT * FROM positions JOIN players ON (players.position_id = positions.id) WHERE position_id = {$this->getPositionId()}");
+            foreach($returned_positions as $position) {
+                $position_name = $position['position_name'];
+                $id = $position['id'];
+                $new_position = new position($position_name, $id);
+                array_push($positions, $new_position);
+            }
+
+            return $positions[0]->getName();
+        }
 }
  ?>
