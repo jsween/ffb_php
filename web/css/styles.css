@@ -3,6 +3,13 @@
     max-height: 254px;
 }
 
+.jumbotron {
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    color: #eee;
+    text-shadow: 3px 3px 3px #111;
+}
+
 .center {
     text-align: center;
 }
