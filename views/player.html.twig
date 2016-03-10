@@ -8,13 +8,15 @@
         <h1 class="center">Fantasy Football Draft Tool</h1>
     </div>
     <div class="container row">
-        <div class="col-xs-4">
+        <div class="col-xs-3">
             <img class="player-photo" src="/../img/players/{{ player.getPhotoUrl }}" alt="{{ player.getName }}" />
+        </div>
+        <div class="col-xs-4">
             <h2>{{ player.getName }}</h2>
             <p>{{ player.getPosition }} - {{ player.getTeam }}</p>
             <img class="logo" src="/../img/logos/{{ player.getTeamLogo }}.png" alt=" {{ player.getTeam }}" />
         </div>
-        <div class="col-lg-8">
+        <div class="col-xs-5">
             <table class="table">
                 <th>
                     2015 Avg
