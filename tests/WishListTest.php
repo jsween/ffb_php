@@ -63,30 +63,30 @@
             // var_dump($result);
             $this->assertEquals($test_wish_list, $result[0]);
         }
-        // function test_getAll()
-        // {
-        //     // Arrange
-        //     $name = "My Wish List";
-        //     $id = null;
-        //     $test_wish_list = new WishList($name, $id);
-        //     $test_wish_list->save();
-        //     // Act
-        //     $result = WishList::getAll();
-        //     // Assert
-        //     $this->assertEquals([$test_wish_list], $result);
-        // }
-        // function test_deleteAll()
-        // {
-        //     // Arrange
-        //     $name = "My Wish List";
-        //     $id = null;
-        //     $test_wish_list = new WishList($name, $id);
-        //     $test_wish_list->save();
-        //     // Act
-        //     WishList::deleteAll();
-        //     $result = WishList::getAll();
-        //     // Assert
-        //     $this->assertEquals([], $result);
-        // }
+        function test_getAll()
+        {
+            // Arrange
+            $name = "My Wish List";
+            $id = null;
+            $test_wish_list = new WishList($name, $id);
+            $test_wish_list->save();
+            // Act
+            $result = WishList::getAll();
+            // Assert
+            $this->assertEquals([$test_wish_list], $result);
+        }
+        function test_deleteAll()
+        {
+            // Arrange
+            $name = "My Wish List";
+            $id = null;
+            $test_wish_list = new WishList($name, $id);
+            $test_wish_list->save();
+            // Act
+            WishList::deleteAll();
+            $result = WishList::getAll();
+            // Assert
+            $this->assertEquals([], $result);
+        }
     }
  ?>

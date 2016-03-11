@@ -35,7 +35,6 @@
                 $id = $wish_list['id'];
                 $new_wish_list = new WishList($name, $id);
                 array_push($wish_list_array, $new_wish_list);
-                var_dump($wish_list_array);
             }
             return $wish_list_array;
         }
