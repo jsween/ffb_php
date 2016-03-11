@@ -16,10 +16,10 @@
 
     class TeamTest extends PHPUnit_Framework_TestCase
     {
-        protected function tearDown()
-        {
-            Team::deleteAll();
-        }
+        // protected function tearDown()
+        // {
+        //     Team::deleteAll();
+        // }
 
         function test_getName()
         {

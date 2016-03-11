@@ -19,7 +19,7 @@
         protected function tearDown()
         {
             Player::deleteAll();
-            Team::deleteAll();
+            // Team::deleteAll();
         }
 
         function test_getName()
@@ -192,15 +192,19 @@
             $test_player->save();
 
 
-            $team_name1 = "San Francisco 49ers";
-            $team_id = 28;
-            $test_team1 = new Team($team_name1, $team_id);
-            $test_team1->save();
+            $name = 'San Francisco 49ers';
+            $logo = 'sanfrancisco.png';
+            $abbreviation = 'SF';
+            $id = 28;
+            $test_team1 = new Team($name, $logo, $abbreviation, $id);
+            // $test_team1->save();
 
             $team_name2 = "Cincinnati Bengals";
+            $logo2 = 'cincinnatibengals.png';
+            $abbreviation2 = 'CIN';
             $team_id2 = 7;
-            $test_team2 = new Team($team_name2, $team_id2);
-            $test_team2->save();
+            $test_team2 = new Team($team_name2, $logo2, $abbreviation2, $team_id2);
+            // $test_team2->save();
             // Act
             $result = $test_player->getTeam();
             // Assert
