@@ -15,6 +15,11 @@
             return $this->player_id;
         }
 
+        function getId()
+        {
+            return $this->id;
+        }
+
     }
 
 

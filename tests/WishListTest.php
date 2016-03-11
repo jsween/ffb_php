@@ -35,5 +35,19 @@
             // Assert
             $this->assertEquals(1, $result);
         }
+
+        function test_getId()
+        {
+            // Arrange
+            $player_id = 1;
+            $id = 2;
+            $test_player = new WishList($player_id, $id);
+
+            // Act
+            $result = $test_player->getId();
+
+            // Assert
+            $this->assertEquals(2, $result);
+        }
     }
  ?>
