@@ -210,6 +210,70 @@
             $this->assertEquals("San Francisco 49ers", $result);
         }
 
+        function test_getTeamLogo()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'http://www.joemontana.com/1.jpg';
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
+            $test_player->save();
+
+            $name = 'San Francisco 49ers';
+            $logo = 'sanfrancisco.png';
+            $abbreviation = 'SF';
+            $id = 28;
+            $test_team1 = new Team($name, $logo, $abbreviation, $id);
+            // $test_team1->save();
+
+            $team_name2 = "Cincinnati Bengals";
+            $logo2 = 'cincinnatibengals.png';
+            $abbreviation2 = 'CIN';
+            $team_id2 = 7;
+            $test_team2 = new Team($team_name2, $logo2, $abbreviation2, $team_id2);
+            // $test_team2->save();
+            // Act
+            $result = $test_player->getTeamLogo();
+            // Assert
+            $this->assertEquals("sanfrancisco", $result);
+        }
+
+        function test_getTeamAbbreviation()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'http://www.joemontana.com/1.jpg';
+            // $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url);
+            $test_player->save();
+
+            $name = 'San Francisco 49ers';
+            $logo = 'sanfrancisco.png';
+            $abbreviation = 'SF';
+            // $id = 28;
+            $test_team1 = new Team($name, $logo, $abbreviation);
+            // $test_team1->save();
+
+            $team_name2 = "Cincinnati Bengals";
+            $logo2 = 'cincinnatibengals.png';
+            $abbreviation2 = 'CIN';
+            // $team_id2 = 7;
+            $test_team2 = new Team($team_name2, $logo2, $abbreviation2);
+            // $test_team2->save();
+            // Act
+            $result = $test_player->getTeamAbbreviation();
+            // Assert
+            $this->assertEquals("SF", $result);
+        }
+
         /*** User is not finding data right now, these are not needed as of now ***/
 
         // function test_find()
