@@ -63,6 +63,7 @@
             // var_dump($result);
             $this->assertEquals($test_wish_list, $result[0]);
         }
+
         function test_getAll()
         {
             // Arrange
@@ -75,6 +76,7 @@
             // Assert
             $this->assertEquals([$test_wish_list], $result);
         }
+
         function test_deleteAll()
         {
             // Arrange
@@ -88,5 +90,29 @@
             // Assert
             $this->assertEquals([], $result);
         }
+
+        function test_addPlayer()
+        {
+            // Arrange
+            $name = "My Wish List";
+            $id = 1;
+            $test_wish_list = new WishList($name, $id);
+            $test_wish_list->save();
+
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'https://ryanaustindean.files.wordpress.com/2011/09/joe-montana-greatest-qb.jpg';
+            $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
+            $test_player->save();
+            // Act
+            $test_wish_list->addPlayer($test_player);
+            // Assert
+            $this->assertEquals([$test_player], $test_wish_list->getPlayers());
+        }
+
     }
  ?>
