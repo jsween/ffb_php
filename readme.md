@@ -29,7 +29,7 @@ _This web app is designed to act as a tool for a fantasy football player.  Upon 
 
 > CREATE TABLE teams (id serial PRIMARY KEY, team_name VARCHAR(55), logo VARCHAR(55), abbreviation VARCHAR(6));
 
-> CREATE TABLE wish_list (id serial PRIMARY KEY, player_id INT);
+> CREATE TABLE wish_list (id serial PRIMARY KEY, name VARCHAR(55));
 
 > CREATE TABLE wishlist_players (id serial PRIMARY KEY, wish_list_id INT, player_id INT);
 
