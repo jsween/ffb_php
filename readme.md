@@ -18,6 +18,19 @@ _This web app is designed to act as a tool for a fantasy football player.  Upon 
 4. Open the directory http://localhost:8000 in any standard web browser.
 5. Launch MAMP and access mySQL by entering __/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot__ .
 
+### SQL Commands ###
+> CREATE DATABASE ffb_tool_db;
+
+> USE ffb_tool_db;
+
+>CREATE TABLE players (id serial PRIMARY KEY, name VARCHAR(255), avg_fifteen DECIMAL(3,1), consistency INT, position_id INT, team_id INT, photo_url VARCHAR(255));
+
+> CREATE TABLE positions (id serial PRIMARY KEY, position_name VARCHAR(55));
+
+> CREATE TABLE teams (id serial PRIMARY KEY, team_name VARCHAR(55), logo VARCHAR(55), abbreviation VARCHAR(6));
+
+> CREATE TABLE wish_list (id serial PRIMARY KEY, player_id INT);
+
 ## Known Bugs
 
 _Still a work in progress.  No known bugs at this time._
