@@ -31,6 +31,8 @@ _This web app is designed to act as a tool for a fantasy football player.  Upon 
 
 > CREATE TABLE wish_list (id serial PRIMARY KEY, player_id INT);
 
+> CREATE TABLE wishlist_players (id serial PRIMARY KEY, wish_list_id INT, player_id INT);
+
 ## Known Bugs
 
 _Still a work in progress.  No known bugs at this time._
