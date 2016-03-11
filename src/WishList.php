@@ -4,7 +4,7 @@
         private $name;
         private $id;
 
-        function __construct($name, $id=null)
+        function __construct($id=null)
         {
             $this->name = "My Wish List";
             $this->id = $id;

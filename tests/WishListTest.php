@@ -22,9 +22,24 @@
         //     WishList::deleteAll();
         // }
 
+        function test_getName()
+        {
+            // Arrange
+
+            $id = 2;
+            $test_player = new WishList($id);
+
+            // Act
+            $result = $test_player->getName();
+
+            // Assert
+            $this->assertEquals("My Wish List", $result);
+        }
+
         function test_getId()
         {
             // Arrange
+
             $id = 2;
             $test_player = new WishList($id);
 
