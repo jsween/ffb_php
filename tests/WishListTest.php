@@ -49,5 +49,41 @@
             // Assert
             $this->assertEquals(2, $result);
         }
+
+        function test_save()
+        {
+            // Arrange
+            $id = null;
+            $test_wish_list = new WishList($id);
+            // Act
+            $test_wish_list->save();
+            // Assert
+            $result = WishList::getAll();
+            var_dump($result);
+            $this->assertEquals($test_wish_list, $result[0]);
+        }
+        // function test_getAll()
+        // {
+        //     // Arrange
+        //     $id = null;
+        //     $test_wish_list = new WishList($id);
+        //     $test_wish_list->save();
+        //     // Act
+        //     $result = WishList::getAll();
+        //     // Assert
+        //     $this->assertEquals([$test_wish_list], $result);
+        // }
+        function test_deleteAll()
+        {
+            // Arrange
+            $id = null;
+            $test_wish_list = new WishList($id);
+            $test_wish_list->save();
+            // Act
+            WishList::deleteAll();
+            $result = WishList::getAll();
+            // Assert
+            $this->assertEquals([], $result);
+        }
     }
  ?>

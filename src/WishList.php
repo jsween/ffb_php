@@ -36,6 +36,7 @@
                 $new_wish_list = new WishList($id);
                 array_push($wish_list, $new_wish_list);
             }
+            // var_dump($wish_list);
             return $wish_list;
         }
 
