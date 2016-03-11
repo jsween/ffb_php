@@ -191,7 +191,6 @@
             $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
             $test_player->save();
 
-
             $name = 'San Francisco 49ers';
             $logo = 'sanfrancisco.png';
             $abbreviation = 'SF';
