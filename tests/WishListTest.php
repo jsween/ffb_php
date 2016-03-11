@@ -17,17 +17,17 @@
 
     class WishListTest extends PHPUnit_Framework_TestCase
     {
-        // protected function tearDown()
-        // {
-        //     WishList::deleteAll();
-        // }
+        protected function tearDown()
+        {
+            WishList::deleteAll();
+        }
 
         function test_getName()
         {
             // Arrange
-
+            $name = "My Wish List";
             $id = 2;
-            $test_player = new WishList($id);
+            $test_player = new WishList($name, $id);
 
             // Act
             $result = $test_player->getName();
@@ -39,9 +39,9 @@
         function test_getId()
         {
             // Arrange
-
+            $name = 'tricky';
             $id = 2;
-            $test_player = new WishList($id);
+            $test_player = new WishList($name, $id);
 
             // Act
             $result = $test_player->getId();
@@ -53,37 +53,40 @@
         function test_save()
         {
             // Arrange
-            $id = null;
-            $test_wish_list = new WishList($id);
+            $name = "My Wish List";
+            $test_wish_list = new WishList($name);
             // Act
             $test_wish_list->save();
             // Assert
             $result = WishList::getAll();
-            var_dump($result);
+            // var_dump($test_wish_list);
+            // var_dump($result);
             $this->assertEquals($test_wish_list, $result[0]);
         }
         // function test_getAll()
         // {
         //     // Arrange
+        //     $name = "My Wish List";
         //     $id = null;
-        //     $test_wish_list = new WishList($id);
+        //     $test_wish_list = new WishList($name, $id);
         //     $test_wish_list->save();
         //     // Act
         //     $result = WishList::getAll();
         //     // Assert
         //     $this->assertEquals([$test_wish_list], $result);
         // }
-        function test_deleteAll()
-        {
-            // Arrange
-            $id = null;
-            $test_wish_list = new WishList($id);
-            $test_wish_list->save();
-            // Act
-            WishList::deleteAll();
-            $result = WishList::getAll();
-            // Assert
-            $this->assertEquals([], $result);
-        }
+        // function test_deleteAll()
+        // {
+        //     // Arrange
+        //     $name = "My Wish List";
+        //     $id = null;
+        //     $test_wish_list = new WishList($name, $id);
+        //     $test_wish_list->save();
+        //     // Act
+        //     WishList::deleteAll();
+        //     $result = WishList::getAll();
+        //     // Assert
+        //     $this->assertEquals([], $result);
+        // }
     }
  ?>

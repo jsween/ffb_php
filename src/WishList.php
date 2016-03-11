@@ -4,9 +4,9 @@
         private $name;
         private $id;
 
-        function __construct($id=null)
+        function __construct($name, $id=null)
         {
-            $this->name = "My Wish List";
+            $this->name = $name;
             $this->id = $id;
         }
 
@@ -29,21 +29,21 @@
         static function getAll()
         {
             $returned_wish_list = $GLOBALS['DB']->query("SELECT * FROM wish_list;");
-            $wish_list = array();
+            $wish_list_array = array();
             foreach ($returned_wish_list as $wish_list) {
-                // $name = $wish_list['name'];
+                $name = $wish_list['name'];
                 $id = $wish_list['id'];
-                $new_wish_list = new WishList($id);
-                array_push($wish_list, $new_wish_list);
+                $new_wish_list = new WishList($name, $id);
+                array_push($wish_list_array, $new_wish_list);
+                var_dump($wish_list_array);
             }
-            // var_dump($wish_list);
-            return $wish_list;
+            return $wish_list_array;
         }
 
         static function deleteAll()
         {
             $GLOBALS['DB']->query("DELETE FROM wish_list;");
-            $GLOBALS['DB']->query("DELETE FROM wishlist_players;");
+            // $GLOBALS['DB']->query("DELETE FROM wishlist_players;");
         }
 
         // function addPlayer($player)
