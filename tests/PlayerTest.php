@@ -274,6 +274,34 @@
             $this->assertEquals("SF", $result);
         }
 
+        function test_getPosition()
+        {
+            // Arrange
+            $name = 'Joe Montana';
+            $avg_fifteen = 24.1;
+            $consistency = 98;
+            $position_id = 1;
+            $team_id = 28;
+            $photo_url = 'http://www.joemontana.com/1.jpg';
+            // $id = 16;
+            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url);
+            $test_player->save();
+
+            $name = 'Quarterback';
+            // $id = 28;
+            $test_position1 = new Position($name);
+            // $test_position1->save();
+
+            $name2 = "RunningBack";
+            // $position_id2 = 7;
+            $test_position2 = new Position($name2);
+            // $test_position2->save();
+            // Act
+            $result = $test_player->getPosition();
+            // Assert
+            $this->assertEquals("Quarterback", $result);
+        }
+
         /*** User is not finding data right now, these are not needed as of now ***/
 
         // function test_find()
