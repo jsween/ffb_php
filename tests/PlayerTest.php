@@ -19,7 +19,7 @@
         protected function tearDown()
         {
             Player::deleteAll();
-            // Team::deleteAll();
+            Team::deleteAll();
         }
 
         function test_getName()
@@ -178,7 +178,7 @@
 
         }
 
-        function test_find()
+        function test_getTeam()
         {
             // Arrange
             $name = 'Joe Montana';
@@ -191,21 +191,52 @@
             $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
             $test_player->save();
 
-            $name2 = 'Brett Favre';
-            $avg_fifteen2 = 23.2;
-            $consistency2 = 93;
-            $position_id2 = 1;
-            $team_id2 = 12;
-            $photo_url2 = 'http://www.officialbrettfavre.com/i/n/131.jpg';
-            $test_player2 = new Player($name2, $avg_fifteen, $consistency2, $position_id2, $team_id2, $photo_url2);
-            $test_player2->save();
 
+            $team_name1 = "San Francisco 49ers";
+            $team_id = 28;
+            $test_team1 = new Team($team_name1, $team_id);
+            $test_team1->save();
+
+            $team_name2 = "Cincinnati Bengals";
+            $team_id2 = 7;
+            $test_team2 = new Team($team_name2, $team_id2);
+            $test_team2->save();
             // Act
-            $id = $test_player->getId();
-            $result = Player::find($id);
+            $result = $test_player->getTeam();
             // Assert
-            $this->assertEquals($test_player, $result);
+            $this->assertEquals("San Francisco 49ers", $result);
         }
+
+        /*** User is not finding data right now, these are not needed as of now ***/
+
+        // function test_find()
+        // {
+        //     // Arrange
+        //     $name = 'Joe Montana';
+        //     $avg_fifteen = 24.1;
+        //     $consistency = 98;
+        //     $position_id = 1;
+        //     $team_id = 28;
+        //     $photo_url = 'http://www.joemontana.com/1.jpg';
+        //     $id = 16;
+        //     $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
+        //     $test_player->save();
+        //
+        //     $name2 = 'Brett Favre';
+        //     $avg_fifteen2 = 23.2;
+        //     $consistency2 = 93;
+        //     $position_id2 = 1;
+        //     $team_id2 = 12;
+        //     $photo_url2 = 'http://www.officialbrettfavre.com/i/n/131.jpg';
+        //     $test_player2 = new Player($name2, $avg_fifteen, $consistency2, $position_id2, $team_id2, $photo_url2);
+        //     $test_player2->save();
+        //
+        //     // Act
+        //     $id = $test_player->getId();
+        //     $result = Player::find($id);
+        //     // Assert
+        //     $this->assertEquals($test_player, $result);
+        // }
 
         // function test_findByName()
         // {
@@ -236,34 +267,7 @@
         //     $this->assertEquals($name, $result->getName());
         // }
 
-        function test_getTeam()
-        {
-            // Arrange
-            $name = 'Joe Montana';
-            $avg_fifteen = 24.1;
-            $consistency = 98;
-            $position_id = 1;
-            $team_id = 28;
-            $photo_url = 'http://www.joemontana.com/1.jpg';
-            $id = 16;
-            $test_player = new Player($name, $avg_fifteen, $consistency, $position_id, $team_id, $photo_url, $id);
-            $test_player->save();
 
-
-            $team_name1 = "San Francisco 49ers";
-            $team_id = 28;
-            $test_team1 = new Team($team_name1, $team_id);
-            $test_team1->save();
-
-            $team_name2 = "Cincinnati Bengals";
-            $team_id2 = 7;
-            $test_team2 = new Team($team_name2, $team_id2);
-            $test_team2->save();
-            // Act
-            $result = $test_player->getTeam();
-            // Assert
-            $this->assertEquals("San Francisco 49ers", $result);
-        }
 
     }
  ?>
