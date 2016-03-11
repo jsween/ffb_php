@@ -1,6 +1,6 @@
 # _FFB Draft Tool PHP_
 
-#### _Week 5 Project of PHP - 3.10.2016_
+#### _Week 5 Project of PHP - 3.11.2016_
 
 ### By _**Jon Sweeney**_
 
@@ -35,7 +35,7 @@ _This web app is designed to act as a tool for a fantasy football player.  Upon 
 
 ## Known Bugs
 
-_Still a work in progress.  No known bugs at this time._
+_Have not set up the Wish List class yet._
 
 ## Support and contact details
 
